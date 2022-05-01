@@ -1,5 +1,6 @@
 let outputscreen = document.getElementById( 'output-screen');
 const formatting = Intl.NumberFormat('en');
+let cal = document.getElementById('cal');
 
 function displaysign(num){
     
@@ -44,4 +45,16 @@ function prev(num){
             console.log(isSign);
             outputscreen.value += num;      
         
+}
+
+function changeTheme(){
+
+    const color1 = ['#ffbf00' ,'#ffff00', '#bfff00', '#40ff00','#00ffff','#0080ff','#0000ff', '#8000ff', '#ff00bf','#ff0040' ];
+    let ind1 = Math.floor(Math.random() * 10);
+    let ind2 = Math.floor(Math.random() * 10);
+    console.log(ind1, ind2);
+
+    cal.style.backgroundColor = color1[ind1];
+    document.body.style.backgroundColor = color1[ind2]
+
 }
