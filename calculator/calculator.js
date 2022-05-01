@@ -1,8 +1,9 @@
 let outputscreen = document.getElementById( 'output-screen');
+const formatting = Intl.NumberFormat('en');
 
 function displaysign(num){
     
-    
+    outputscreen.value = outputscreen.value.split(',').join('');
     let index1 =   outputscreen.value.length -1 ;
     let sign1 = outputscreen.value.charAt(index1);
           
@@ -14,6 +15,7 @@ function displaysign(num){
 }
 
 function display(num){
+    outputscreen.value = outputscreen.value.split(',').join('');
     outputscreen.value += num; 
 }
 
@@ -24,6 +26,7 @@ function Clear(){
 function calculate(){
     try{
         outputscreen.value = eval(outputscreen.value);
+        outputscreen.value = formatting.format(outputscreen.value);
 
     }
     catch(err){
